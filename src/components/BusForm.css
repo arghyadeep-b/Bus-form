@@ -1,0 +1,9 @@
+
+.bus-form-container{
+    width: 50vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 2px solid gray;
+} 
