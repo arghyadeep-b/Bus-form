@@ -83,7 +83,7 @@ function BusForm() {
             </option>
             {routes.map((route, index) => {
               return (
-                <option value={route.routeNo} key={index}>
+                <option value={route.routeName} key={index}>
                   {route.routeName}
                 </option>
               );
@@ -118,8 +118,7 @@ function BusForm() {
         {console.table("List", list)}
       </form>
 
-      {/* Conditional rendering not workking */}
-      {list != [] && <BusList list={list} />}
+      <BusList list={list} />
     </>
   );
 }

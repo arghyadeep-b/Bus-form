@@ -4,6 +4,7 @@ function BusList({ list }) {
   return (
     <div className="bus-list">
       <h2 className="bus-list-title">Bus List</h2>
+      {list.length === 0 && <h4>List is empty</h4>}
       {list.map((item, index) => {
         return (
           <>
