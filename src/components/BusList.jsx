@@ -1,6 +1,8 @@
 import React from "react";
+import { FaEdit, FaTrash } from "react-icons/fa";
+import "./BusList.css";
 
-function BusList({ list }) {
+function BusList({ list, removeItem, editItem }) {
   return (
     <div className="bus-list">
       <h2 className="bus-list-title">Bus List</h2>
@@ -8,12 +10,30 @@ function BusList({ list }) {
       {list.map((item, index) => {
         return (
           <>
-            <h4>Item {index + 1}</h4>
-            <ul key={index}>
-              <li>Bus number: {item.busNo}</li>
-              <li>Route: {item.route}</li>
-              <li>Driver: {item.driver}</li>
-            </ul>
+            <div key={index} className="bus-list-item ticket">
+              <div className="ticket-bus-no">
+                <p>Bus No. {item.busNo}</p>
+                <div className="style-zigzag"></div>
+              </div>
+              <div>
+                <li>Route: {item.route}</li>
+                <li>Driver: {item.driver}</li>
+              </div>
+              <button
+                type="button"
+                className="btn-edit-ticket"
+                onClick={() => editItem(item.busNo)}
+              >
+                <FaEdit />
+              </button>
+              <button
+                type="button"
+                className="btn-delete-ticket"
+                onClick={() => removeItem(item.busNo)}
+              >
+                <FaTrash />
+              </button>
+            </div>
           </>
         );
       })}
