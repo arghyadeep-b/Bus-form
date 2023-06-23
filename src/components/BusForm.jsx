@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+/* eslint-disable react/no-unescaped-entities */
+// eslint-disable-next-line no-unused-vars
+import React from "react";
+import { useState } from "react";
 import "./BusForm.css";
-import BusList from "./BusList";
+import BusList2 from "./buslist2";
 
 function BusForm() {
   const [formData, setFormData] = useState({
@@ -9,14 +12,14 @@ function BusForm() {
     driver: "",
   });
   const [list, setList] = useState([]);
-  const [routes, SetRoutes] = useState([
+  const [routes] = useState([
     {
       routeNo: 1,
-      routeName: "Place A - Place B",
+      routeName: "srinagar - KLS VDIT",
     },
     {
       routeNo: 2,
-      routeName: "Place C - Place D",
+      routeName: "Malmaddi - KLS VDIT",
     },
     {
       routeNo: 3,
@@ -141,8 +144,13 @@ function BusForm() {
         Add Bus
       </button>
       {console.table("List", list)}
-
-      <BusList list={list} removeItem={removeItem} editItem={editItem} />
+{/* <div className="trial"> */}
+      <BusList2 list={list} removeItem={removeItem} editItem={editItem} />
+      {/* <BusList2 list={list} removeItem={removeItem} editItem={editItem} />
+      <BusList2 list={list} removeItem={removeItem} editItem={editItem} />
+      <BusList2 list={list} removeItem={removeItem} editItem={editItem} />
+      <BusList2 list={list} removeItem={removeItem} editItem={editItem} /> */}
+    {/* </div> */}
     </div>
   );
 }
